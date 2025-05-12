@@ -209,9 +209,9 @@ public class OnTrackService {
             return false;
         }
         
-        // Bug introduced: This will always return false because we're checking for NEED_HELP instead of READY_FOR_FEEDBACK
+        // Check if all tasks are ready for feedback
         boolean allTasksReady = unitTasks.stream()
-                .allMatch(task -> task.getStatus() == Status.NEED_HELP);
+                .allMatch(task -> task.getStatus() == Status.READY_FOR_FEEDBACK);
         
         return allTasksReady;
     }
