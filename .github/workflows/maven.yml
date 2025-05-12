@@ -3,8 +3,12 @@ name: Java CI with Maven for Task9_1P
 on:
   push:
     branches: [main, master]
+    paths:
+      - "Task9_1P/**"
   pull_request:
     branches: [main, master]
+    paths:
+      - "Task9_1P/**"
 
 jobs:
   build:
@@ -19,7 +23,8 @@ jobs:
           distribution: "temurin"
           cache: maven
       - name: Build with Maven
-        run: mvn -B package --file Task9_1P/pom.xml
+        run: mvn -B package --file pom.xml
         working-directory: Task9_1P
       - name: Test with Maven
         run: mvn test
+        working-directory: Task9_1P
