@@ -3,12 +3,8 @@ name: Java CI with Maven for Task9_1P
 on:
   push:
     branches: [main, master]
-    paths:
-      - "Task9_1P/**"
   pull_request:
     branches: [main, master]
-    paths:
-      - "Task9_1P/**"
 
 jobs:
   build:
@@ -27,11 +23,3 @@ jobs:
         working-directory: Task9_1P
       - name: Test with Maven
         run: mvn test
-        working-directory: Task9_1P
-
-      - name: Upload Test Results
-        if: always()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: Task9_1P/target/surefire-reports/*.xml
