@@ -1,6 +1,8 @@
 name: Java CI with Maven for Task9_1P
 
 on:
+  workflow_dispatch:
+
   push:
     branches: [main, master]
     paths:
